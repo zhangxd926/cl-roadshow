@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>roadshow-swagger</artifactId>
 	<name>roadshow-swagger</name>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	
 	<dependencies> 
 	    <!-- Swagger -->
@@ -35,6 +35,19 @@
         </dependency>
 	</dependencies>
 	
+	<properties>
+      <jettyVersion>9.2.18.v20160721</jettyVersion>
+    </properties>
+	
+	<build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>${jettyVersion}</version>
+      </plugin>
+    </plugins>
+	</build>
 	<repositories>
         <repository>
             <id>spring.io</id>
